@@ -93,7 +93,7 @@ endfunction()
 # Usage:
 #   SELECT_NVCC_ARCH_FLAGS(out_variable [list of CUDA compute archs])
 function(CUDA_SELECT_NVCC_ARCH_FLAGS out_variable)
-  set(CUDA_ARCH_LIST "${ARGN}")
+  set(CUDA_ARCH_LIST "All")
 
   if("X${CUDA_ARCH_LIST}" STREQUAL "X" )
     set(CUDA_ARCH_LIST "Auto")
