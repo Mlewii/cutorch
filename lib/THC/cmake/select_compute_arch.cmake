@@ -18,7 +18,7 @@
 #
 
 # This list will be used for CUDA_ARCH_NAME = All option
-set(CUDA_KNOWN_GPU_ARCHITECTURES  "Kepler")
+set(CUDA_KNOWN_GPU_ARCHITECTURES "Kepler")
 
 # This list will be used for CUDA_ARCH_NAME = Common option (enabled by default)
 #set(CUDA_COMMON_GPU_ARCHITECTURES "3.0" "3.5" "5.0")
@@ -83,7 +83,7 @@ function(CUDA_DETECT_INSTALLED_GPUS OUT_VARIABLE)
     message(STATUS "Automatic GPU detection failed. Building for common architectures.")
     set(${OUT_VARIABLE} ${CUDA_COMMON_GPU_ARCHITECTURES} PARENT_SCOPE)
   else()
-    set(${OUT_VARIABLE} ${CUDA_GPU_DETECT_OUTPUT} PARENT_SCOPE)
+    set(${OUT_VARIABLE} ${CUDA_COMMON_GPU_ARCHITECTURES} PARENT_SCOPE)
   endif()
 endfunction()
 
