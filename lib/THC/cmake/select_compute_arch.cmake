@@ -18,22 +18,23 @@
 #
 
 # This list will be used for CUDA_ARCH_NAME = All option
-set(CUDA_KNOWN_GPU_ARCHITECTURES  "Fermi" "Kepler" "Maxwell")
+set(CUDA_KNOWN_GPU_ARCHITECTURES  "Kepler")
 
 # This list will be used for CUDA_ARCH_NAME = Common option (enabled by default)
-set(CUDA_COMMON_GPU_ARCHITECTURES "3.0" "3.5" "5.0")
+#set(CUDA_COMMON_GPU_ARCHITECTURES "3.0" "3.5" "5.0")
+set(CUDA_COMMON_GPU_ARCHITECTURES "3.0" "3.5" "3.7" "5.0")
 
-if (CUDA_VERSION VERSION_GREATER "6.5")
-  list(APPEND CUDA_KNOWN_GPU_ARCHITECTURES "Kepler+Tegra" "Kepler+Tesla" "Maxwell+Tegra")
-  list(APPEND CUDA_COMMON_GPU_ARCHITECTURES "5.2")
-endif ()
+#if (CUDA_VERSION VERSION_GREATER "6.5")
+#  list(APPEND CUDA_KNOWN_GPU_ARCHITECTURES "Kepler+Tegra" "Kepler+Tesla" "Maxwell+Tegra")
+#  list(APPEND CUDA_COMMON_GPU_ARCHITECTURES "5.2")
+#endif ()
 
-if (CUDA_VERSION VERSION_GREATER "7.5")
-  list(APPEND CUDA_KNOWN_GPU_ARCHITECTURES "Pascal")
-  list(APPEND CUDA_COMMON_GPU_ARCHITECTURES "6.0" "6.1" "6.1+PTX")
-else()
-  list(APPEND CUDA_COMMON_GPU_ARCHITECTURES "5.2+PTX")
-endif ()
+#if (CUDA_VERSION VERSION_GREATER "7.5")
+#  list(APPEND CUDA_KNOWN_GPU_ARCHITECTURES "Pascal")
+#  list(APPEND CUDA_COMMON_GPU_ARCHITECTURES "6.0" "6.1" "6.1+PTX")
+#else()
+#  list(APPEND CUDA_COMMON_GPU_ARCHITECTURES "5.2+PTX")
+#endif ()
 
 
 
